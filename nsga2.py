@@ -12,8 +12,12 @@ class NSGA2:
 
     Parameters
     ----------
-    data : (N, K) array-like
-        The candidate data points for the Pareto front.
+    objective : a function
+        The function to minimize typically from R^n to R^m with m >= 1
+    in_dim : integer
+        The dimension of the input
+    out_dim : integer
+        The dimension of the output
 
     Notes
     -----
@@ -21,7 +25,8 @@ class NSGA2:
     2002.
     '''
 
-    def __init__(self, data):
-        self.data = data
-        self.dim = data.shape[1]
+    def __init__(self, objective, in_dim, out_dim):
+        self.objective = objective
+        self.in_dim = in_dim
+        self.out_dim = out_dim
     
