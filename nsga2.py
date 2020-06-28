@@ -18,6 +18,8 @@ class NSGA2:
         The dimension of the input
     out_dim : integer
         The dimension of the output
+    pop_size : integer, default = 100
+        The size of the population
 
     Notes
     -----
@@ -25,8 +27,8 @@ class NSGA2:
     2002.
     '''
 
-    def __init__(self, objective, in_dim, out_dim):
+    def __init__(self, objective, in_dim, out_dim, pop_size=200):
         self.objective = objective
         self.in_dim = in_dim
         self.out_dim = out_dim
-    
+        self.pop_size = pop_size
